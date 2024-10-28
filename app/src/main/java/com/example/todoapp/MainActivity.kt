@@ -2,6 +2,7 @@ package com.example.todoapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
@@ -25,7 +26,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val todoViewModel = ViewModelProvider(this)[TodoViewModel::class.java]
-        enableEdgeToEdge()
+        enableEdgeToEdge(
+            SystemBarStyle.dark(0)
+        )
         setContent {
             TodoAppTheme {
                 Box(modifier = Modifier.background(Brush.verticalGradient(listOf(bg1, bg2))))

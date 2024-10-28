@@ -52,9 +52,7 @@ import java.util.TimeZone
 @Composable
 fun TodoListPage(viewModel: TodoViewModel) {
     val todoList by viewModel.todoList.observeAsState()
-    var inputText by remember {
-        mutableStateOf("")
-    }
+    var inputText by remember { mutableStateOf("") }
     Column(
         modifier = Modifier
             .fillMaxHeight()
